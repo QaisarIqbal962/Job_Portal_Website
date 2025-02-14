@@ -53,7 +53,7 @@ h3 {
   padding: 4rem 0;
 }
 
-extra-space {
+.extra-space {
   padding-top: 8rem;
 }
 
@@ -250,7 +250,7 @@ header {
   align-items: center;
 }
 
-.f1-box img{
+.f1-box img {
   border-radius: 50%;
   margin-bottom: 1rem;
 }
@@ -264,6 +264,59 @@ header {
   background-color: #edcfee;
   padding: 10px 20px;
   border-radius: 20px;
+}
+
+/* footer */
+
+footer {
+  background: #1f4a40;
+  color: #fff;
+  padding: 4rem 0;
+}
+
+.top{
+  display: flex;
+  align-items: center;
+  text-align: end;
+  justify-content:space-between;
+  flex-wrap: wrap;
+}
+
+.top .logo{
+  width: 170px;
+  margin-bottom: 1rem;
+}
+
+.top i {
+  color: #fff;
+  font-size: 2rem;
+  margin-left: 0.5rem;
+}
+
+.bottom {
+  padding-top: 2rem;
+  text-align: start;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.bottom div {
+  display: flex;
+  flex-direction: column;
+}
+
+.bottom a {
+  text-decoration: none;
+  color: #fafafa;
+  line-height: 35px;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 1200px) {
+  .obj-width{
+    width: 95%;
+  }
 }
 
 @media (max-width: 699px) {
@@ -357,15 +410,24 @@ header {
     justify-items: center;
   }
 
-  .team-container .f1-box{
+  .team-container .f1-box {
     width: 48%;
     text-align: center;
     border-radius: 10px;
     margin-top: 1rem;
   }
 
-  .skill{
+  .skill {
     padding-bottom: 1rem;
   }
 
+  /* footer */
+
+  .top i {
+    margin: 1rem 1rem 0 0;
+  }
+  .bottom div {
+    width: 50%;
+    margin-bottom: 50px;
+  }
 }
