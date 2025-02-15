@@ -339,6 +339,31 @@ footer {
   font-size: 1.1rem;
 }
 
+/* Job details page */
+
+.job-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f8fcfa;
+  border: 1px solid #51a995;
+  border-radius: 38px;
+  padding: 2rem;
+}
+
+.job-img-row{
+  display: flex;
+  align-items: center;
+}
+
+.job-header img{
+  width: 100px;
+  background: #fff;
+  padding: 1rem;
+  border-radius: 15px;
+  margin-right: 2rem;
+}
+
 
 
 
