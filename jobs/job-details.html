@@ -26,60 +26,7 @@
         </div>
     </header>
 
-    <div id="jobDetails" class="extra-space obj-width">
-        <div class="job-header">
-            <div class="job-img-row">
-                <img src="../images/google.png" alt="" />
-                <div>
-                    <h2>Google</h2>
-                    <span>USA</span>
-                </div>
-            </div>
-            <a href="#" id="g-btn">Apply Now</a>
-        </div>
-
-        <!-- feature section -->
-
-        <div class="features sec-space">
-            <div class="fe-box">
-                <div>
-                    <img src="../images/vacancy.png" alt="" />
-                    <h3>Vacancy</h3>
-                    <p>01 Vacancy</p>
-                </div>
-
-                <div>
-                    <img src="../images/fe 1.png" alt="" />
-                    <h3>Position</h3>
-                    <p>Web Developer</p>
-                </div>
-
-                <div>
-                    <img src="../images/hour.png" alt="" />
-                    <h3>Hours</h3>
-                    <p>50h /week</p>
-                </div>
-
-                <div>
-                    <img src="../images/salary.png" alt="" />
-                    <h3>Salary</h3>
-                    <p>$900-1200/m</p>
-                </div>
-            </div>
-        </div>
-        <div class="job-description sec-space">
-            <h3>Job description</h3>
-            <p>"it is a long established fact that a reader will be distracted by the readable content of page when looking at its layout.The point of using lorem ipsum is that it hsa a more-or less normal distribution of letters, as opposed to using 'Content here,content here'making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy.Various versions have evolved over the years, sometimes by accident, sometime on purpose (injected humour and the like)."</p>
-            <h3>Employment Status</h3>
-            <p>- Full Time</p>
-            <h3>Workplace</h3>
-            <p>- Work from home</p>
-            <h3>Educational Requirements</h3>
-            <p>- Bachelor degree in any Computer Science Course</p>
-            <h3>Experience Requirement</h3>
-            <p>- 2 to 5 year(s)</p>
-        </div>
-    </div>
+    <div id="jobDetails" class="extra-space obj-width"></div>
 
     <!-- footer -->
 
@@ -139,6 +86,77 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const URLParam = new URLSearchParams(window.location.search);
+            const index = URLParam.get("id"); // Fixed variable name
+    
+            if (!index || !jCategory || !jCategory[index]) {
+                console.error("Invalid job ID or job data is missing.");
+                document.getElementById("jobDetails").innerHTML = "<p>Job details not found.</p>";
+                return;
+            }
+    
+            const selectJob = jCategory[index]; 
+    
+            const jobDetailsContainer = document.getElementById("jobDetails");
+    
+            jobDetailsContainer.innerHTML = `
+            <div class="job-header">
+                <div class="job-img-row">
+                    <img src="${selectJob.image}" alt="" />
+                    <div>
+                        <h2>${selectJob.companyName}</h2>
+                        <span>${selectJob.location}</span>
+                    </div>
+                </div>
+                <a href="#" id="g-btn">Apply Now</a>
+            </div>
+    
+            <div class="features sec-space">
+                <div class="fe-box">
+                    <div>
+                        <img src="../images/vacancy.png" alt="" />
+                        <h3>Vacancy</h3>
+                        <p>${selectJob.vacancy}</p>
+                    </div>
+    
+                    <div>
+                        <img src="../images/fe 1.png" alt="" />
+                        <h3>Position</h3>
+                        <p>${selectJob.title}</p>
+                    </div>
+    
+                    <div>
+                        <img src="../images/hour.png" alt="" />
+                        <h3>Hours</h3>
+                        <p>${selectJob.hours}</p>
+                    </div>
+    
+                    <div>
+                        <img src="../images/salary.png" alt="" />
+                        <h3>Salary</h3>
+                        <p>${selectJob.rate}</p>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="job-description sec-space">
+                <h3>Job description</h3>
+                <p>${selectJob.description}</p>
+                <h3>Employment Status</h3>
+                <p>${selectJob.av}</p>
+                <h3>Workplace</h3>
+                <p>${selectJob.workplace}</p>
+                <h3>Educational Requirements</h3>
+                <p>${selectJob.education}</p>
+                <h3>Experience Requirement</h3>
+                <p>${selectJob.experience}</p>
+            </div>`;
+        });
+    </script>
+    
 
     <script src="jobs-list.js"></script>
     <script src="../toggle.js"></script>
