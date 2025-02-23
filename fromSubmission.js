@@ -1,14 +1,13 @@
-document.getElementById("contact-form").addEventListener("submit", async function(event) {
-    event.preventDefault(); // Prevent default form submission
-    
-    // Collect form data
+document.getElementById("contact-form").addEventListener("submit", async function (event) {
+    event.preventDefault();
+
+
     const formData = new FormData(this);
     const data = Object.fromEntries(formData.entries());
-    
-    // Show success message on the webpage
+
+
     alert("Form successfully submitted!");
-    
-    // Send email using an API (such as EmailJS or a backend server)
+
     await fetch("https://your-backend.com/send-email", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -19,6 +18,6 @@ document.getElementById("contact-form").addEventListener("submit", async functio
         })
     });
 
-    // Reset form after submission
+
     this.reset();
 });
